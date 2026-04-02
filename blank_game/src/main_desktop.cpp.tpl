@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
     std::printf("====================\n\n");
 
     axe::Engine engine;
-    if (!engine.init("AXE Engine - __GAME_DISPLAY_NAME__", 1280, 720, false)) {
+    if (!engine.init("Autoplayer One - __GAME_DISPLAY_NAME__", 1280, 720, false)) {
         std::fprintf(stderr, "Failed to initialize engine\n");
         return 1;
     }

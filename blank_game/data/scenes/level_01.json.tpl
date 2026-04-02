@@ -1,5 +1,10 @@
 {
   "scene": "__GAME_ID___level_01",
+  "layout": {
+    "width": 1600,
+    "height": 900,
+    "origin": "top_left"
+  },
   "camera": {
     "zoom": 1.0
   },
@@ -37,7 +42,7 @@
     },
     {
       "id": "hud_status",
-      "text": "Blank AXE game scaffold ready. Add entities, assets, and scripts.",
+      "text": "Blank Autoplayer One game scaffold ready. Add entities, assets, and scripts.",
       "x": 24,
       "y": 72,
       "color": 15,
