@@ -13,11 +13,11 @@ real game shell and content.
 
 ## Included Data
 
-- starter runtime scene at `data/scenes/level_01.json`
-- starter entity preview scene at `data/scenes/entity_preview.json`
+- starter runtime scene at `scenes/level_01/level_01.json`
+- starter entity preview scene at `scenes/entity_preview/entity_preview.json`
 - starter action manifest at `data/input_actions.json`
-- starter Autoplayer smoke spec at `data/play_specs/smoke_test.json`
-- placeholder reusable entity at `data/entities/example_entity.json`
+- starter Autoplayer smoke spec at `scenes/level_01/specs/level_01-smoke.json`
+- placeholder reusable entity at `entities/example_entity/example_entity.json`
 
 Starter scenes include `layout.width`, `layout.height`, and `layout.origin` so
 scene previews and placement work have a stable coordinate contract from the start.
@@ -29,11 +29,15 @@ __GAME_ID__/
 |- assets/
 |- .ap1/
 |- data/
-|  |- entities/
-|  |- play_specs/
-|  `- scenes/
+|- entities/
+|  `- example_entity/
+|- scenes/
+|  |- entity_preview/
+|  `- level_01/
 |- scripts/
-|  `- scenes/
+|  |- enemies/
+|  |- player/
+|  `- systems/
 |- src/
 |- vendor/
 |- CMakeLists.txt
@@ -71,7 +75,7 @@ From this game folder:
 
 ```powershell
 ..\..\gdk\cli\ap1.ps1 autoplay --game . `
-  --play-spec data\play_specs\smoke_test.json `
+  --play-spec scenes\level_01\specs\level_01-smoke.json `
   --input-actions data\input_actions.json `
   --artifacts .ap1\autoplay\smoke_test
 ```
@@ -82,7 +86,7 @@ From this game folder:
 
 ```powershell
 ..\..\gdk\cli\ap1.ps1 preview entity --game . `
-  --entity data\entities\example_entity.json `
+  --entity entities\example_entity\example_entity.json `
   --artifacts .ap1\entity_preview\example_entity
 ```
 
@@ -92,7 +96,7 @@ From this game folder:
 
 ```powershell
 ..\..\gdk\cli\ap1.ps1 preview scene --game . `
-  --scene data\scenes\level_01.json `
+  --scene scenes\level_01\level_01.json `
   --artifacts .ap1\scene_preview\level_01 `
   --hide-ui --show-layout
 ```
@@ -104,11 +108,13 @@ From this game folder:
 ```powershell
 ..\..\gdk\cli\ap1.ps1 new entity enemy-chaser
 ..\..\gdk\cli\ap1.ps1 new scene room-02
-..\..\gdk\cli\ap1.ps1 new spec room-02-smoke
 ```
 
 When you run these inside the game folder, `ap1` uses the current directory automatically.
-`new scene` also creates `scripts/scenes/<scene>.lua` as a scene-level logic stub.
+`new scene` also creates:
+
+- `scenes/<scene>/<scene>.lua`
+- `scenes/<scene>/specs/<scene>-smoke.json`
 
 Next step:
 

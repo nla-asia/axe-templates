@@ -1,7 +1,7 @@
 {
   "title": "__GAME_DISPLAY_NAME__",
   "version": "0.1.0",
-  "start_scene": "data/scenes/level_01.json",
+  "start_scene": "scenes/level_01/level_01.json",
   "physics": {
     "gravity_x": 0,
     "gravity_y": 980,

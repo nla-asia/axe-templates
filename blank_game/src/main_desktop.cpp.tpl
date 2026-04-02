@@ -26,7 +26,7 @@ bool setWorkingDirectoryToExecutableFolder(const char* argv0) {
 int main(int argc, char** argv) {
     setWorkingDirectoryToExecutableFolder(argv ? argv[0] : nullptr);
 
-    std::string scenePath = "data/scenes/level_01.json";
+    std::string scenePath = "scenes/level_01/level_01.json";
 
     for (int i = 1; i < argc; ++i) {
         const std::string arg = argv[i];
